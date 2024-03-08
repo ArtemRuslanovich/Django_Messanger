@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Messenger</title>
+</head>
+<body>
+    <h1>Messages</h1>
+    {% for message in messages %}
+        <p><strong>{{ message.author.username }}:</strong> {{ message.content }}</p>
+    {% endfor %}
+</body>
+</html>
