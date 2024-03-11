@@ -1,7 +1,11 @@
 from django.shortcuts import render
 
-from .models import Message
+def index(request):
+    # Here you might list chat rooms or something similar
+    return render(request, 'chat/index.html')
 
-def home(request):
-    messages = Message.objects.all()
-    return render(request, '/Users/artemruslanovic/Django_Messanger/chat/templates/home.html', {'messages': messages})
+def room(request, room_name):
+    # Render the chat room page with the room name
+    return render(request, 'chat/room.html', {
+        'room_name': room_name
+    })
